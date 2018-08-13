@@ -22,7 +22,7 @@ from Bookmarks.AppBookmarks.urls import router_app_bookmarks
 urlpatterns = [
     path('', views.index, name='index'),
     path('admin/', admin.site.urls),
-    url(r'APIappBookmarks', include(router_app_bookmarks.urls)),
+    url(r'APIappBookmarks/', include(router_app_bookmarks.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
 
