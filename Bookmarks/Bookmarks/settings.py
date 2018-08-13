@@ -40,11 +40,15 @@ django_APPS = [
     'rest_framework',
 ]
 
+third_party_APPS = [
+
+]
+
 user_APPS = [
     'Bookmarks.AppBookmarks',
 ]
 
-INSTALLED_APPS = django_APPS + user_APPS
+INSTALLED_APPS = django_APPS + third_party_APPS + user_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
