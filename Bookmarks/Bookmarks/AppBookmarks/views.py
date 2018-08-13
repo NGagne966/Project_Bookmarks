@@ -2,7 +2,7 @@
 
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
-from .serializers import UserSerializer, GroupSerializer
+from .serializers import UserSerializer, BookmarkSerializer
 
 
 
@@ -18,9 +18,9 @@ class UserViewSet(viewsets.ModelViewSet):
     serializer_class = UserSerializer
 
 
-class GroupViewSet(viewsets.ModelViewSet):
+class BookmarksViewSet(viewsets.ModelViewSet):
     """
-    API endpoint that allows groups to be viewed or edited.
+    API endpoint that allows bookmarks to be viewed or edited.
     """
     queryset = Group.objects.all()
-    serializer_class = GroupSerializer
+    serializer_class = BookmarkSerializer
