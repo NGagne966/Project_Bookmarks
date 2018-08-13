@@ -30,7 +30,7 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = [
+django_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,6 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
 ]
+
+user_APPS = [
+    'Bookmarks.AppBookmarks',
+]
+
+INSTALLED_APPS = django_APPS + user_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
