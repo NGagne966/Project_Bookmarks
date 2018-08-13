@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url, include
-from Bookmarks.AppBookmarks import views
+from Bookmarks import views
 from Bookmarks.AppBookmarks.urls import router_app_bookmarks
 
 urlpatterns = [
