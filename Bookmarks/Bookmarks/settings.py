@@ -28,6 +28,14 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+# Permission Global
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'Bookmarks.AppBookmarks.permissions.IsPostOrIsGetOrIsAuthenticated',
+    )
+}
+
+
 # Application definition
 
 django_APPS = [

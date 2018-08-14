@@ -7,7 +7,7 @@ from Bookmarks.AppBookmarks.models import Bookmark
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
-        fields = ('url', 'username', 'email', 'groups')
+        fields = ('url', 'username', 'email', 'groups', 'is_staff')
 
 
 class BookmarkSerializer(serializers.HyperlinkedModelSerializer):
