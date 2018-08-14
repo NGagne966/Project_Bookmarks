@@ -1,9 +1,10 @@
 
 
-from django.contrib.auth.models import User, Group
+from django.contrib.auth.models import User
 from rest_framework import viewsets
 from rest_framework.permissions import IsAdminUser
 from .serializers import UserSerializer, BookmarkSerializer
+from Bookmarks.AppBookmarks.models import Bookmark
 
 
 
@@ -24,5 +25,5 @@ class BookmarksViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows bookmarks to be viewed or edited.
     """
-    queryset = Group.objects.all()
+    queryset = Bookmark.objects.all().order_by('-created')
     serializer_class = BookmarkSerializer
