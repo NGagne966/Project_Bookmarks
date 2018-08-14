@@ -1,4 +1,6 @@
 from django.db import models
+import urllib.request
+from django.http import HttpResponse
 
 # Create your models here.
 
@@ -22,4 +24,23 @@ class Bookmark(models.Model):
     description = models.TextField(max_length=144, default= 'Short description')
 
     type = models.IntegerField(choices=TYPE_CHOICES, default=1)
+
+    def save(self, *args, **kwargs):
+        try:
+            url = 'http://' + str(self.site_link)
+            url_code = 1
+            url_code = urllib.request.urlopen(url).getcode()
+        except:
+            pass
+
+
+        if url_code == 200:
+            super().save(*args, **kwargs)  # Call the "real" save() methode
+            print('Valid', self.site_link)
+
+        else:
+            print('Invalid', self.site_link)
+            return HttpResponse("This website is not valid.")
+
+
 
