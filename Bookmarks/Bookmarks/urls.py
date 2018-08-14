@@ -17,12 +17,12 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url, include
 from Bookmarks import views
-from Bookmarks.AppBookmarks.urls import router_app_bookmarks
+from Bookmarks.AppBookmarks.urls import router_app_bookmarks, url_app_bookmarks
 
 urlpatterns = [
     path('', views.index, name='index'),
     path('admin/', admin.site.urls),
-    url(r'APIappBookmarks/', include(router_app_bookmarks.urls)),
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    url(r'APIappBookmarks/', include(url_app_bookmarks)),
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]
 

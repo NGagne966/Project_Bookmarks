@@ -28,10 +28,9 @@ class Bookmark(models.Model):
     def save(self, *args, **kwargs):
         try:
             url = 'http://' + str(self.site_link)
-            url_code = 1
             url_code = urllib.request.urlopen(url).getcode()
         except:
-            pass
+            url_code = 1
 
 
         if url_code == 200:
