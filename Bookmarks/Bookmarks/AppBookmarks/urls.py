@@ -9,6 +9,8 @@ router_app_bookmarks.register(r'bookmarks', views.BookmarksViewSet)
 router_app_bookmarks.register(r'new_bookmarks', views.CreateBookmarkViewSet, base_name='new_bookmarks')
 # I made some change
 
+# made other change
+
 url_app_bookmarks = [
 
 ]
